@@ -1,0 +1,32 @@
+{
+  "name": "react-shope",
+  "version": "1.0.0",
+  "description": "A Project Of MERN Stack",
+  "main": "index.js",
+  "scripts": {
+    "start:clinet": "cd client && npm start && cd ..",
+    "install": "cd client && npm install && cd .. && cd server && npm install && cd ..",
+    "start:server": "cd server && npm start && cd ..",
+    "start": "npm run start:server",
+    "build:clinet": "cd client && npm run build && cd --",
+    "build": "npm run build:client && cd --"
+  },
+  "engines": {
+    "node": "12.14.1",
+    "npm": "6.14.5"
+  },
+  "cacheDirectories": [
+    "server/node_modules",
+    "clinet/node_modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kishanofficial8899/mern-shope.git"
+  },
+  "author": "Kishan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kishanofficial8899/mern-shope/issues"
+  },
+  "homepage": "https://github.com/Kishanofficial8899/mern-shope#readme"
+}
