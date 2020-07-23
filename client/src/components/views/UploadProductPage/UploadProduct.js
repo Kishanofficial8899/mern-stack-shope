@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Fileupload from '../../utils/Fileupload';
 import axios from 'axios';
 
-import { Typography, Input, Form, Button } from 'antd';
+import { Typography, Input, Form, Button, message } from 'antd';
 let { Title } = Typography;
 let { TextArea } = Input;
 
@@ -49,10 +49,11 @@ const UploadProduct = (props) => {
 
     const res = await axios.post('/api/1.0/addProduct', productDataToSend);
     if (res.data.success) {
-      alert('Product Successfully Uploaded');
-      props.history.push('/');
+      message
+        .success('Added SuccessFully', 1)
+        .then(() => props.history.push('/'));
     } else {
-      alert('Failed to upload Product');
+      message.error('Somthing Went Wrong', 2);
     }
   };
 
