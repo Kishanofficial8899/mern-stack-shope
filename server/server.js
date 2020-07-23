@@ -22,7 +22,7 @@ mongoose
     useCreateIndex: true,
     useFindAndModify: false,
   })
-  .then(() => console.log(`MONGODB IS CONNECTED...${DB}`))
+  .then(() => console.log(`MONGODB IS CONNECTED...`))
   .catch((err) => console.log(err));
 
 app.use(cors());
@@ -35,7 +35,6 @@ app.use(cookieParser());
 app.use('/api/1.0', router);
 
 /* 
-  
 //use this to show the image you have in node js server to client (react js)
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
 */
@@ -49,7 +48,7 @@ if (process.env.NODE_ENV === 'production') {
 
   // index.html for all page routes    html or routing and naviagtion
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
   });
 }
 
