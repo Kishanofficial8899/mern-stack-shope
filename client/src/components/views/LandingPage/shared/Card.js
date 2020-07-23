@@ -1,13 +1,17 @@
-import React from 'react';
-import { Col, Card } from 'antd';
+import React, { useState } from 'react';
 
 import PropTypes from 'prop-types';
 import ImageSlider from './ImageSlider';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import { Col, Card } from 'antd';
 
 let { Meta } = Card;
 
 const RenderCard = ({ products }) => {
+  const user = useSelector((state) => state.user);
+
   return (
     <>
       {products &&
@@ -23,10 +27,13 @@ const RenderCard = ({ products }) => {
               key={product._id}>
               <Card
                 hoverable
-                style={{ width: 240, height: '250px' }}
+                style={{
+                  width: 240,
+                  height: '250px',
+                  boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
+                }}
                 cover={
                   <Link to={`/product/${product._id}`}>
-                    {' '}
                     <ImageSlider Images={product.images} />
                   </Link>
                 }>
@@ -38,7 +45,7 @@ const RenderCard = ({ products }) => {
                     color: 'grey',
                   }}>
                   <span>₹</span>
-                  {''} {product.price}
+                  {product.price}
                 </h2>
               </Card>
             </Col>

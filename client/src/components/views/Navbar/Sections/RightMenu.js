@@ -50,7 +50,7 @@ const RightMenu = (props) => {
             <span>
               <Uploadoutlined
                 style={{
-                  fontSize: '1.6rem',
+                  fontSize: '2rem',
                   color: 'blue',
                 }}
               />
@@ -66,7 +66,7 @@ const RightMenu = (props) => {
               <span>
                 <ShoppingCartOutlined
                   style={{
-                    fontSize: '1.6rem',
+                    fontSize: '2rem',
                     color: 'blue',
                   }}
                 />
@@ -77,7 +77,10 @@ const RightMenu = (props) => {
 
         <SubMenu
           title={
-            <span>
+            <span
+              style={{
+                marginTop: '1rem',
+              }}>
               {user.userData && <Avatar src={user.userData.image} size={25} />}
             </span>
           }>

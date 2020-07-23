@@ -2,6 +2,7 @@ const { User } = require('../models/User');
 const { Payment } = require('../models/Payment');
 const async = require('async');
 const { Product } = require('../models/Product');
+var moment = require('moment');
 
 const PaymentController = (req, res) => {
   let history = [];
@@ -12,7 +13,7 @@ const PaymentController = (req, res) => {
   /*WE Pass CartDetail from Cart.js File */
   req.body.cartDetail.forEach((item) => {
     history.push({
-      dateOfPurchase: Date.now(),
+      dateOfPurchase: moment().format('MMMM Do YYYY, h:mm:ss a'),
       name: item.title,
       id: item._id,
       price: item.price,
@@ -54,7 +55,6 @@ const PaymentController = (req, res) => {
         async.eachSeries(
           Products,
           (item, callback) => {
-            console.log('THIS IS THE ITEM', item);
             Product.update(
               { _id: item.id },
               { $inc: { sold: item.quantity } },
