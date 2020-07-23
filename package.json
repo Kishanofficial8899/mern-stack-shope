@@ -4,15 +4,14 @@
   "description": "A Project Of MERN Stack",
   "main": "index.js",
   "scripts": {
+    "client": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
     "start:clinet": "cd client && npm start && cd ..",
-    "install": "cd client && npm install && cd .. && cd server && npm install && cd ..",
-    "start:server": "cd server && nodemon server.js && cd ..",
     "start": "npm run start:server",
-    "build:clinet": "cd client && npm run build && cd --",
-    "build": "npm run build:client && cd --",
-    "client": "npm start --prefix client",
+    "start:server": "cd server && npm start && cd ..",
     "dev": "concurrently \"npm run start:clinet\" \"npm run start:server\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "engines": {
     "node": "12.14.1",
