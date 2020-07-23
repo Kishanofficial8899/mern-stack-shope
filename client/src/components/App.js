@@ -15,6 +15,7 @@ import UploadProduct from './views/UploadProductPage/UploadProduct';
 import SingleProduct from './views/SingleProduct/SingleProduct';
 import Cart from './views/CartPage/Cart';
 import HistoryPage from './views/historyPage/historyPage';
+import UserProfile from './views/UserProfile/UserProfile';
 
 import '../index.css';
 
@@ -43,6 +44,11 @@ const App = () => {
           />
           <Route exact path='/user/cart' component={Auth(Cart, true)} />
           <Route exact path='/history' component={Auth(HistoryPage, true)} />
+          <Route
+            exact
+            path='/user/account'
+            component={Auth(UserProfile, true)}
+          />
         </Switch>
       </div>
     </div>

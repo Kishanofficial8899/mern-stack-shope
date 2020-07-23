@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 import ImageSlider from './ImageSlider';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { Col, Card } from 'antd';
+import { Col, Card, Button } from 'antd';
 
 let { Meta } = Card;
 

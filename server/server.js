@@ -9,14 +9,14 @@ const cors = require('cors');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const config = require('config');
+// const config = require('config');
 
 //connection to mongodb
 const router = require('./routes');
 
-const DB = config.get('mongoURI');
+// const DB = config.get('mongoURI');
 mongoose
-  .connect(DB, {
+  .connect(process.env.monogoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

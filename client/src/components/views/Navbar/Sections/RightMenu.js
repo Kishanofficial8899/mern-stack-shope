@@ -42,9 +42,6 @@ const RightMenu = (props) => {
       <Menu mode={props.mode}>
         {/* history */}
 
-        <Menu.Item key='history' style={{ paddingBottom: '0.2rem' }}>
-          <Link to='/history'>History</Link>
-        </Menu.Item>
         <Menu.Item key='upload'>
           <Link to='/upload/product'>
             <span>
@@ -88,6 +85,9 @@ const RightMenu = (props) => {
             <Link to='' onClick={logoutHanlder}>
               Logout
             </Link>
+          </Menu.Item>
+          <Menu.Item key='account'>
+            <Link to='/user/account'>Account</Link>
           </Menu.Item>
         </SubMenu>
       </Menu>

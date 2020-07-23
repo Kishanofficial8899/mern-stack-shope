@@ -6,7 +6,7 @@
   "scripts": {
     "start:clinet": "cd client && npm start && cd ..",
     "install": "cd client && npm install && cd .. && cd server && npm install && cd ..",
-    "start:server": "cd server && npm start && cd ..",
+    "start:server": "cd server && nodemon server.js && cd ..",
     "start": "npm run start:server",
     "build:clinet": "cd client && npm run build && cd --",
     "build": "npm run build:client && cd --",
