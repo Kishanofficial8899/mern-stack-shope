@@ -9,19 +9,20 @@ const cors = require('cors');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const Db = require('config');
+const config = require('config');
 
 //connection to mongodb
 const router = require('./routes');
 
+const DB = config.get('mongoURI');
 mongoose
-  .connect(Db.get('mongoURI'), {
+  .connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false,
   })
-  .then(() => console.log('MONGODB IS CONNECTED...'))
+  .then(() => console.log(`MONGODB IS CONNECTED...${DB}`))
   .catch((err) => console.log(err));
 
 app.use(cors());
