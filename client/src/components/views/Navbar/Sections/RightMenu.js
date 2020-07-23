@@ -81,13 +81,13 @@ const RightMenu = (props) => {
               {user.userData && <Avatar src={user.userData.image} size={25} />}
             </span>
           }>
+          <Menu.Item key='account'>
+            <Link to='/user/account'>Account</Link>
+          </Menu.Item>
           <Menu.Item key='logout'>
             <Link to='' onClick={logoutHanlder}>
               Logout
             </Link>
-          </Menu.Item>
-          <Menu.Item key='account'>
-            <Link to='/user/account'>Account</Link>
           </Menu.Item>
         </SubMenu>
       </Menu>

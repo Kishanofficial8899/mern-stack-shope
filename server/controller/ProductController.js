@@ -148,11 +148,17 @@ const getProductByID = (req, res) => {
 };
 
 // const deleteProductByCreator = (req, res) => {
-//   Product.findByIdAndRemove({ _id: req.body.id }).exec((err, doc) => {
-//     if (err) return res.status(400).json({ success: false, err });
-//     res.status(200).json({
-//       success: true,
-//     });
+//   Product.deleteOne({ _id: req.body.id }).exec((err, doc) => {
+//     if (err) return res.status(400).json({ success: false, err: err.message });
+
+//     if (res.status(200)) {
+//       Product.find({}).exec((err, doc) => {
+//         res.json({
+//           success: true,
+//           doc,
+//         });
+//       });
+//     }
 //   });
 // };
 
@@ -161,5 +167,4 @@ module.exports = {
   addProduct,
   getProduct,
   getProductByID,
-  // deleteProductByCreator,
 };

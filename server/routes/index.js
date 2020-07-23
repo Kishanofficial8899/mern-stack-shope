@@ -16,6 +16,11 @@ router.get('/logout', auth, AuthController.logout);
 router.get('/auth', auth, AuthController.auth);
 router.get('/addToCartUser', auth, AuthController.addToCartUser);
 router.get('/removeItemFromCart', auth, AuthController.removeItemFromTheCart);
+router.get(
+  '/getingUserAddedProduct',
+  auth,
+  AuthController.getingUserAddedProduct
+);
 
 //Product
 router.post('/uploadProduct', auth, ProductController.uploadProduct);

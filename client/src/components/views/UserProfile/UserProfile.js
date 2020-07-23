@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { Card } from 'antd';
 import HistoryPage from '../historyPage/historyPage';
+import axios from 'axios';
+import UploadedProduct from './UplodedProduct';
+import { Card, Button } from 'antd';
 
 const { Meta } = Card;
 const UserProfile = ({ user }) => {
-  console.log(user);
+  const [toggle, setIsToggle] = useState(true);
+  const [userProduct, setUserProduct] = useState([]);
+  const toggleHistory = () => {
+    setIsToggle(!toggle);
+  };
+
+  console.log(userProduct);
   return (
     <div style={{ width: '70%', margin: '1rem auto' }}>
       <div style={{ textAlign: 'center' }}></div>
@@ -33,7 +41,22 @@ const UserProfile = ({ user }) => {
                 <h2 style={{ color: 'grey', fontSize: '1rem' }}>
                   {user.userData.email}
                 </h2>
-                <HistoryPage user={user} />
+                <div style={{ marginTop: '2rem' }}>
+                  {!toggle ? (
+                    <Button type='primary' size='large' onClick={toggleHistory}>
+                      Show More
+                    </Button>
+                  ) : (
+                    <Button type='primary' size='large' onClick={toggleHistory}>
+                      Show Less
+                    </Button>
+                  )}
+                </div>
+
+                <div style={{ marginTop: '1rem' }}>
+                  {toggle && <UploadedProduct />}
+                </div>
+                {toggle && <HistoryPage user={user} />}
               </div>
             )}
           </div>

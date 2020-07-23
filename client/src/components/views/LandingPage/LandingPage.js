@@ -7,7 +7,6 @@ import Checkbox from './Helpers/Checkbox';
 import RadioButton from './Helpers/RadioButton';
 import { Prices } from './Helpers/Data';
 import SearchInput from './Helpers/SearchInput';
-
 import { Row, Spin, Button, Col } from 'antd';
 
 const LandingPage = () => {

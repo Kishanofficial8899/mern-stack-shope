@@ -9,9 +9,7 @@ import { Col, Card, Button } from 'antd';
 
 let { Meta } = Card;
 
-const RenderCard = ({ products }) => {
-  const user = useSelector((state) => state.user);
-
+const RenderCard = ({ products, onClick }) => {
   return (
     <>
       {products &&
@@ -29,7 +27,7 @@ const RenderCard = ({ products }) => {
                 hoverable
                 style={{
                   width: 240,
-                  height: '250px',
+                  height: '300px',
                   boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
                 }}
                 cover={

@@ -177,6 +177,16 @@ const removeItemFromTheCart = (req, res) => {
   );
 };
 
+const getingUserAddedProduct = (req, res) => {
+  Product.find({ writer: req.user._id }).exec((err, doc) => {
+    if (err) return res.json({ success: false, err });
+    res.status(200).json({
+      success: true,
+      doc,
+    });
+  });
+};
+
 module.exports = {
   register,
   login,
@@ -184,4 +194,5 @@ module.exports = {
   auth,
   addToCartUser,
   removeItemFromTheCart,
+  getingUserAddedProduct,
 };
