@@ -25,18 +25,7 @@ const RightMenu = (props) => {
     }
   };
 
-  if (user.userData && !user.userData.isAuth) {
-    return (
-      <Menu mode={props.mode} style={{ marginTop: '0.8rem' }}>
-        <Menu.Item key='mail'>
-          <Link to='/login'>Signin</Link>
-        </Menu.Item>
-        <Menu.Item key='app'>
-          <Link to='/register'>Signup</Link>
-        </Menu.Item>
-      </Menu>
-    );
-  } else {
+  if (user.userData && user.userData.isAuth) {
     return (
       <Menu mode={props.mode}>
         {/* history */}
@@ -87,6 +76,17 @@ const RightMenu = (props) => {
             </Link>
           </Menu.Item>
         </SubMenu>
+      </Menu>
+    );
+  } else {
+    return (
+      <Menu mode={props.mode} style={{ marginTop: '0.8rem' }}>
+        <Menu.Item key='mail'>
+          <Link to='/login'>Signin</Link>
+        </Menu.Item>
+        <Menu.Item key='app'>
+          <Link to='/register'>Signup</Link>
+        </Menu.Item>
       </Menu>
     );
   }
