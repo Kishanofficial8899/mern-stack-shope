@@ -13,10 +13,9 @@ require('dotenv').config();
 //connection to mongodb
 const router = require('./routes');
 
-// const DB = config.get('mongoURI');
 mongoose
   .connect(
-    'mongodb://localhost:27017/react-shope',
+    process.env.MONGOURL,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

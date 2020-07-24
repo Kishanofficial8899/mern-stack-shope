@@ -11,7 +11,6 @@ import {
 import { Menu, Badge, Avatar } from 'antd';
 
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 const RightMenu = (props) => {
   const user = useSelector((state) => state.user);
@@ -55,7 +54,6 @@ const RightMenu = (props) => {
           </Link>
         </Menu.Item>
         {/* Cart */}
-
         <Menu.Item key='cart'>
           <Link to='/user/cart'>
             {/* user.userData && user.userData.cart.length */}
@@ -71,7 +69,6 @@ const RightMenu = (props) => {
             </Badge>
           </Link>
         </Menu.Item>
-
         <SubMenu
           title={
             <span
