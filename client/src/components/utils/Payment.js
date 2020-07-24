@@ -49,7 +49,7 @@ export default class Payment extends React.Component {
         env={env}
         client={client}
         currency={currency}
-        total={toPay}
+        total={total}
         onError={onError}
         onSuccess={onSuccess}
         onCancel={onCancel}

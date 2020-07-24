@@ -5,7 +5,7 @@ const History = ({ user }) => {
   return (
     <div style={{ width: '80%', margin: '3rem auto' }}>
       <div style={{ textAlign: 'center' }}>
-        <h1>Payement History</h1>
+        <h1>Purchase History</h1>
       </div>
       <br />
 

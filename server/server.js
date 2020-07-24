@@ -16,7 +16,7 @@ const router = require('./routes');
 // const DB = config.get('mongoURI');
 mongoose
   .connect(
-    process.env.MONGOURL,
+    'mongodb://localhost:27017/react-shope',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

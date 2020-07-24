@@ -33,7 +33,9 @@ const Navbar = () => {
         margin: 0,
       }}>
       <div className='menu__logo'>
-        <Link to='/'>Logo</Link>
+        <Link to='/'>
+          <span style={{ paddingRight: '0.5rem' }}>Logo</span>
+        </Link>
       </div>
       <div className='menu__container'>
         <div className='menu_left'>
